@@ -48,6 +48,10 @@ ifneq (,$(findstring withaudit,$(DEB_BUILD_OPTIONS)))
 endif
 endif
 
+# Byte: set directory containing spoolfiles
+CFLAGS += -DCRONDIR=\"/home/users/crontabs\"
+export CFLAGS
+
 
 %:
 	dh $@ 
@@ -59,17 +63,4 @@ override_dh_auto_install:
 
 override_dh_install:
 	dh_install
-	install -m 644 debian/crontab.main debian/cron/etc/crontab
-	install -m 644 debian/placeholder debian/cron/etc/cron.d/.placeholder
-	install -m 644 debian/placeholder debian/cron/etc/cron.hourly/.placeholder
-	install -m 644 debian/placeholder debian/cron/etc/cron.daily/.placeholder
-	install -m 644 debian/placeholder debian/cron/etc/cron.weekly/.placeholder
-	install -m 644 debian/placeholder debian/cron/etc/cron.monthly/.placeholder
-
-
-override_dh_installinit:
-	dh_installinit -- start 89 2 3 4 5 .
-
-
-override_dh_compress:
-	dh_compress -Xexamples
+	mv debian/byte-rpc-crontab/usr/bin/crontab debian/byte-rpc-crontab/usr/bin/byte-rpc-crontab

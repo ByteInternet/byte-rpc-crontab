@@ -1,2 +1,1 @@
-cron        usr/sbin
 crontab     usr/bin
