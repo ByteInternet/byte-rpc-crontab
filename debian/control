@@ -5,7 +5,7 @@ Maintainer: Allard Hoeve <allard@byte.nl>
 Uploaders: Maarten van Schaik <maarten@byte.nl>
 Standards-Version: 3.9.3
 Build-Depends:
-    debhelper (>= 9),
+    debhelper (>= 8),
     libpam0g-dev,
     libselinux1-dev [linux-any],
     libaudit-dev [linux-any]

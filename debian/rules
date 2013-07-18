@@ -49,7 +49,7 @@ endif
 endif
 
 # Byte: set directory containing spoolfiles
-CFLAGS += -DCRONDIR=\"/home/users/crontabs\"
+CFLAGS += -DCRONDIR=\"/home/users\"
 export CFLAGS
 
 
