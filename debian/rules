@@ -48,13 +48,13 @@ ifneq (,$(findstring withaudit,$(DEB_BUILD_OPTIONS)))
 endif
 endif
 
-# Byte: set directory containing spoolfiles
-CFLAGS += -DCRONDIR=\"/home/users\"
+# Byte: set directory containing spoolfiles, disable /etc/cron.{allow,deny} feature
+CFLAGS += -DCRONDIR=\"/home/users\" -DDISABLE_ALLOW_DENY_FILES
 export CFLAGS
 
 
 %:
-	dh $@ 
+	dh $@ --with quilt
 
 
 override_dh_auto_install:
