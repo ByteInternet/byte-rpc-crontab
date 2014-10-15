@@ -54,7 +54,7 @@ export CFLAGS
 
 
 %:
-	dh $@ --with quilt
+	dh $@
 
 
 override_dh_auto_install:

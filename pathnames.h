@@ -47,12 +47,14 @@
 			 * LOG_FILE or SYSLOG is defined, we don't log.  If
 			 * both are defined, we log both ways.
 			 */
+#ifndef DISABLE_ALLOW_DENY_FILES
 #ifdef DEBIAN
 #define	ALLOW_FILE	"/etc/cron.allow"		/*-*/
 #define DENY_FILE	"/etc/cron.deny"		/*-*/
 #else
 #define	ALLOW_FILE	"allow"		/*-*/
 #define DENY_FILE	"deny"		/*-*/
+#endif
 #endif
 /* #define LOG_FILE	"log"		  -*/
 
