@@ -1,3 +1,9 @@
+byte-rpc-cron (3.0pl1-124+byte2) wheezy; urgency=low
+
+  * Disable the cron.allow/deny feature for byte-rpc-crontab
+
+ -- Gertjan Oude Lohuis <gertjan@byte.nl>  Wed, 15 Oct 2014 11:07:45 +0200
+
 byte-rpc-cron (3.0pl1-124+byte1) UNRELEASED; urgency=low
 
   * Modify CRONDIR to /home/users/crontabs
